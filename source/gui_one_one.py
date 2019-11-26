@@ -38,7 +38,7 @@ flag_t1 = True
 flag_t2 = True
 #definitions
 
-def getmyip(num) :
+def getmyip(y) :
 	'''this function returns the ip address. Takes interface number as input
 	:param num: interface number
 	:type values: int
@@ -57,7 +57,7 @@ def getmyip(num) :
 
 
 
-def record_audio(socket) :
+def record_audio(s) :
 	'''start recording through microphone and send on socket s. Take socket variable as input
 	:param socket: socket object
 	:type socket: socket
