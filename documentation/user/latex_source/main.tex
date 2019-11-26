@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\title{
+    {\Huge LANBAC}\\
+    {\Large LAN BASED AUDIO CHATROOM}\\
+    \vspace{+35pt}
+    {\includegraphics[width=50mm,scale=0.5]{iitb.png}}
+}
+\author{
+    \large Abhishek Sharma 193050054\\
+    \large Parmar Raja Vijay 193050090
+}
+\date{November 27,2019}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+
+LANBAC(Lan Based Audio Chatroom) is a LAN based platform that avails a pair of people to communicate with each other using their speech by utilizing the bare minimum networking architecture present in almost all interconnected facilities.
+
+
+It does not involve any middle party for communication and hence provides confidentiality of information at some level.
+
+
+LANBAC utilizes the underlying network stack and more importantly the TCP protocol for reliable communication. It barely puts any pressure on the underlying hardware of the computer as well as the network.
+
+
+The requirements for using LANBAC are already available among all modern computers/Laptops. They include a microphone and interconnectivity via LAN.
+
+
+The main objective of LANBAC is to provide intercommunication between people who are already connected via a fast interconnected LAN.
+
+\section{Motivation}
+Most of the facilities today have management systems that help people perform their tasks smoothly.
+
+For example BodhiTree, Moodle for students, professors of IITB. Such systems are mainly hosted only within the internal network for security reasons. These systems have functionalities of textual chatting among peers. However, they miss out on providing the functionality of audio chatting.
+
+Such audio chatting functionalities could be easily integrated into the systems given that they are hosted within a strong and powerful interconnected private network.
+
+
+For example,students or professors do not have any means of communicating with the ones they work with except for the old telephony network. However, this intercom network is not available to everyone on the campus which defeats its purpose.Hence, one could integrate LANBAC in management systems already available in most of the institutions and enjoy free, clear voice chatting with some level of security provided by the LAN.
+
+The alternative for LANBAC is to avail services from already present service providers such as Skype, Discord, etc. However, that defeats the purpose of providing communication over LAN. 
+
+
+
+\section{Technologies}
+LANBAC runs on python. Python provides the easiest interface to connect to sockets on two different computers, hence it was the best way to go.
+
+Prominent python libraries used for building LANBAC were socket,pyaudio,threading and tkinter.
+
+socket provided an interface to open connections between parties. It also provided us with built-in functions such as to send and recv both in blocking and non-blocking mode to enable data transfer in terms of bytes.
+
+
+pyaudio provided us the capability of extracting the audio directly from the user's microphone by opening streams of data.It also provided us with the capability of making chunks of audio which helped us modulate the experience of audio chatting.
+
+
+threading library helped us in making the entire process of audio chatting multi-threaded which utilized the entire hardware at full potential.
+
+tkinter library shaped our platform to emerge as a user friendly application. 
+
+\section{Workflow}
+
+
+The entire workflow is quite cumbersome to be explained in a single section, hence we provide a high-level overview of the workflow.
+
+\begin{enumerate}
+  \item We start out the application by extracting the IP address of the user.
+
+  \item The next step is to set up a listening socket on the host.
+  
+  \item The application then demands the IP address of the other party which is wanting to communicate.
+  
+  \item Two separate threads are started ( excluding the main thread) which handle the task of extracting audio from the user and sending the data as soon as possible and receiving the data and playing the audio instantaneously.
+  
+  \item The entire process runs in an infinite loop until one of the parties stops communicating.
+\end{enumerate}
+  
+\section{Obstacles}
+The notable obstacles that we faced in building LANBAC were,
+\begin{itemize}
+
+    \item To avoid external noise in the background.
+        \begin{itemize}
+            \item The solution was to tune the sensitivity of the microphone to the best possible level. This metric depends upon the user and hence the auto-correction functionality was not included in the platform.
+        \end{itemize}
+    \item Finding the right chunk size for the network.
+        \begin{itemize}
+            \item This is again dependent on how fast the network is. A Fast network would implicitly mean higher chunks of data could be transferred without any problems.
+        \end{itemize}
+    \item Interference of streams (Audio collection and play streams)
+        \begin{itemize}
+            \item The solution was to follow the correct order while starting the streams or introduce some delay between them so that they do not interfere with each other while starting up.
+
+        \end{itemize}
+\end{itemize}
+
+
+
+\section{Usefulness}
+Our entire project can be judged on usefulness.
+
+It is useful for professors to contact their subordinates or students without having any mobile connections or telephone connections. This makes it useful even for students as they as not equipped with intercom facilities.
+
+
+We think that our reception quality of the audio is really very good in a fast interconnected LAN due to the inclusion of TCP sockets and not using UDP sockets.
+
+\end{document}

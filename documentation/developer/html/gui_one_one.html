@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>gui_one_one module &#8212; LANBAC 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="conf module" href="conf.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-gui_one_one">
+<span id="gui-one-one-module"></span><h1>gui_one_one module<a class="headerlink" href="#module-gui_one_one" title="Permalink to this headline">¶</a></h1>
+<p>LANBAC(Lan Based Audio Chatroom)</p>
+<dl class="class">
+<dt id="gui_one_one.MyThread">
+<em class="property">class </em><code class="descclassname">gui_one_one.</code><code class="descname">MyThread</code><a class="headerlink" href="#gui_one_one.MyThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">threading.Thread</span></code></p>
+<p>General class for threads so that they run in the background</p>
+<dl class="method">
+<dt id="gui_one_one.MyThread.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.MyThread.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.connect">
+<code class="descclassname">gui_one_one.</code><code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>gui function. takes ip address from the text  box. connects it to the other user</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.display_ip">
+<code class="descclassname">gui_one_one.</code><code class="descname">display_ip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.display_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>gui function to display the interface available and get the interface number form the textbox. Displays the ip address.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.getmyip">
+<code class="descclassname">gui_one_one.</code><code class="descname">getmyip</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.getmyip" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function returns the ip address. Takes interface number as input
+:param num: interface number
+:type values: int
+:return: ip address
+:rtype: string</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.main">
+<code class="descclassname">gui_one_one.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility Driver function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.play_audio">
+<code class="descclassname">gui_one_one.</code><code class="descname">play_audio</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.play_audio" title="Permalink to this definition">¶</a></dt>
+<dd><p>start playing the audio received on socket s
+:param s: socket object
+:type s: socket</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.record_audio">
+<code class="descclassname">gui_one_one.</code><code class="descname">record_audio</code><span class="sig-paren">(</span><em>socket</em><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.record_audio" title="Permalink to this definition">¶</a></dt>
+<dd><p>start recording through microphone and send on socket s. Take socket variable as input
+:param socket: socket object
+:type socket: socket</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.start_recording">
+<code class="descclassname">gui_one_one.</code><code class="descname">start_recording</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.start_recording" title="Permalink to this definition">¶</a></dt>
+<dd><p>gui function. starts background thread for recording the audio</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="gui_one_one.stop_recording">
+<code class="descclassname">gui_one_one.</code><code class="descname">stop_recording</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gui_one_one.stop_recording" title="Permalink to this definition">¶</a></dt>
+<dd><p>stops recording the audio and destroys the parent gui window</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">docs</a><ul>
+      <li>Previous: <a href="conf.html" title="previous chapter">conf module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Abhishek.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/gui_one_one.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
