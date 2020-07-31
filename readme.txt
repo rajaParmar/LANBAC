@@ -3,9 +3,6 @@ TEAM : Decepticons
 MEMBERS : Abhishek Sharma (193050054)
 	  Parmar Raja Vijay (193050090)
 
-CONTRIBUTIONS : Abhishek Sharma : GUI and Audio 
-		Parmar Raja Vijay : Connections, Streaming and Documentation 
-
 PROJECT : LANBAC - LAN Based Audio Chatroom 
 
 
